@@ -47,7 +47,7 @@ shape = SubResource("RectangleShape2D_3dryh")
 [node name="barrier" parent="." instance=ExtResource("2_wrm1d")]
 
 [node name="Player" parent="." instance=ExtResource("3_3dryh")]
-position = Vector2(268, 550)
+position = Vector2(251, 539)
 
 [node name="Spawner" type="Node" parent="."]
 
