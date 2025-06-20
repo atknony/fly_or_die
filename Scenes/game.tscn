@@ -34,3 +34,4 @@ shape = SubResource("RectangleShape2D_wowpa")
 [node name="barrier" parent="." instance=ExtResource("2_wrm1d")]
 
 [node name="Player" parent="." instance=ExtResource("3_3dryh")]
+position = Vector2(268, 550)
