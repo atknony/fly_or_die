@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxcbtl6oxlfu"]
+[gd_scene load_steps=7 format=3 uid="uid://bxcbtl6oxlfu"]
 
 [ext_resource type="Script" uid="uid://bql07dpc0ft1f" path="res://Scripts/game.gd" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://dw868ue3dpahb" path="res://Assets/wall.png" id="2_3dryh"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wowpa"]
 size = Vector2(91, 1073)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dryh"]
+size = Vector2(25, 1073)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ebmjs")
@@ -31,19 +34,19 @@ shape = SubResource("RectangleShape2D_wowpa")
 position = Vector2(549, 471)
 shape = SubResource("RectangleShape2D_wowpa")
 
-[node name="Area2D" type="Area2D" parent="walls"]
+[node name="areawall" type="Area2D" parent="walls"]
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls/Area2D"]
-position = Vector2(-9, 464.5)
-shape = SubResource("RectangleShape2D_wowpa")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/areawall"]
+position = Vector2(32.5, 464.5)
+shape = SubResource("RectangleShape2D_3dryh")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls/Area2D"]
-position = Vector2(549, 471)
-shape = SubResource("RectangleShape2D_wowpa")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/areawall"]
+position = Vector2(505, 471)
+shape = SubResource("RectangleShape2D_3dryh")
 
 [node name="barrier" parent="." instance=ExtResource("2_wrm1d")]
 
 [node name="Player" parent="." instance=ExtResource("3_3dryh")]
 position = Vector2(268, 550)
 
-[connection signal="body_entered" from="walls/Area2D" to="." method="_on_player_entered"]
+[connection signal="body_entered" from="walls/areawall" to="." method="_on_player_entered"]
