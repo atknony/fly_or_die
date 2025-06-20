@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu6vocn7tu3c4"]
+[gd_scene load_steps=8 format=3 uid="uid://blu6bkrhra286"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://ex5egljmipmu" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="FontFile" uid="uid://cj8gi15iw7xjq" path="res://Assets/Fonts/gemunu-libre-v8-latin-700.ttf" id="1_28flt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
