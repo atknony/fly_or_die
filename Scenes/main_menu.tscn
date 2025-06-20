@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -59,6 +60,9 @@ _data = {
 =======
 [gd_scene load_steps=0 format=3 uid="uid://cdssefd4g5f7b"]
 >>>>>>> Stashed changes
+=======
+[gd_scene format=3 uid="uid://cdssefd4g5f7b"]
+>>>>>>> parent of 538ec5e (MainMenu)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -67,7 +71,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1ehe0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -75,43 +78,15 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Title" type="Label" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "FLY OR DIE"
-label_settings = ExtResource("1_48xlc")
 
 [node name="HighScore" type="Label" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-text = "0000"
-label_settings = SubResource("LabelSettings_1ehe0")
 
-[node name="Button" type="Button" parent="MarginContainer"]
+[node name="PlayButton" type="Label" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 60
-text = "PLAY"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_n45e2")
-}
-autoplay = "Blink"
-
-[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
