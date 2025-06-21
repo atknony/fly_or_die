@@ -1,7 +1,6 @@
 extends Area2D
 
 var SPEED: float = 80
-const ACCELERATION: float = 50.0 
 const OFF_SCREEN: float = 1000.0
 
 func _process(delta: float) -> void:

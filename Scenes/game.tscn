@@ -43,13 +43,13 @@ shape = SubResource("RectangleShape2D_wrm1d")
 [node name="Spawner" type="Node" parent="."]
 
 [node name="leftupper" type="Marker2D" parent="Spawner"]
-position = Vector2(0, -160)
+position = Vector2(16, -160)
 
 [node name="leftlower" type="Marker2D" parent="Spawner"]
-position = Vector2(0, -40)
+position = Vector2(16, -40)
 
-[node name="Spawntimer" type="Timer" parent="Spawner"]
-wait_time = 3.0
+[node name="SpawnerTimer" type="Timer" parent="Spawner"]
+wait_time = 4.5
 autostart = true
 
 [node name="spike_holder" type="Node" parent="Spawner"]
@@ -66,4 +66,4 @@ scale = Vector2(-1, -1)
 shape = SubResource("WorldBoundaryShape2D_3dryh")
 
 [connection signal="body_entered" from="walls" to="." method="_on_player_bumped_walls"]
-[connection signal="timeout" from="Spawner/Spawntimer" to="." method="_on_spawntimer_timeout"]
+[connection signal="timeout" from="Spawner/SpawnerTimer" to="." method="_on_spawntimer_timeout"]

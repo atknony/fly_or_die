@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 var gravity: float = ProjectSettings.get("physics/2d/default_gravity")
-const speed = 100
+var hold_time := 0.0
+
+const speed = 150
 const JUMP_FORCE = -350
 const HOLD_FORCE = -700
 const HOLD_LIMIT  := 0.5
 
-var hold_time := 0.0
+
 
 func _ready() -> void:
 	velocity.x = speed
