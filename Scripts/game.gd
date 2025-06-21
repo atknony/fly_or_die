@@ -2,8 +2,6 @@ extends Node2D
 
 const SPIKE = preload("res://Scenes/spike.tscn")
 
-
-
 @onready var player: CharacterBody2D = $Player
 @onready var leftupper: Marker2D = $Spawner/leftupper
 @onready var leftlower: Marker2D = $Spawner/leftlower
