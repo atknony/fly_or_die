@@ -41,10 +41,10 @@ position = Vector2(251, 539)
 [node name="Spawner" type="Node" parent="."]
 
 [node name="leftupper" type="Marker2D" parent="Spawner"]
-position = Vector2(0, -251)
+position = Vector2(0, -130)
 
 [node name="leftlower" type="Marker2D" parent="Spawner"]
-position = Vector2(0, -151)
+position = Vector2(0, -40)
 
 [node name="Spawntimer" type="Timer" parent="Spawner"]
 wait_time = 2.0
