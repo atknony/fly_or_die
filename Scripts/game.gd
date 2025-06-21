@@ -1,6 +1,6 @@
 extends Node2D
-const SPIKE = preload("res://Scenes/spike.tscn")
 
+const SPIKE = preload("res://Scenes/spike.tscn")
 
 var COUNTER: int = 0
 
@@ -9,41 +9,18 @@ var COUNTER: int = 0
 @onready var leftlower: Marker2D = $Spawner/leftlower
 @onready var spike_holder: Node = $Spawner/spike_holder
 
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_player_entered(body: Node2D) -> void:
+func _on_player_bumped_walls(body: Node2D) -> void:
 	player.transform.x *= -1
 	player.velocity.x *= -1
 
-
 func spawn_spike() -> void:
 	var new_spike = SPIKE.instantiate()
-	var y_position: float = randf_range(
-		leftupper.position.y,
-		leftlower.position.y,
-	)
-	if int(COUNTER) % 2 == 0:
-		new_spike.position = Vector2(
-			506,
-			y_position
-		)
+	var y_position: float = randf_range(leftupper.position.y,leftlower.position.y)
+	if COUNTER % 2 == 0:
+		new_spike.position = Vector2(506,y_position)
 	else: 
-		new_spike.position = Vector2(
-			37,
-			y_position
-		)
+		new_spike.position = Vector2(37,y_position)
 	new_spike.SPEED += COUNTER * 15
-	
 	spike_holder.add_child(new_spike)
 
 
