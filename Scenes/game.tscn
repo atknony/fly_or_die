@@ -36,12 +36,12 @@ position = Vector2(570, 464)
 shape = SubResource("RectangleShape2D_wrm1d")
 
 [node name="Player" parent="." instance=ExtResource("3_3dryh")]
-position = Vector2(251, 539)
+position = Vector2(281, 180)
 
 [node name="Spawner" type="Node" parent="."]
 
 [node name="leftupper" type="Marker2D" parent="Spawner"]
-position = Vector2(0, -130)
+position = Vector2(0, -160)
 
 [node name="leftlower" type="Marker2D" parent="Spawner"]
 position = Vector2(0, -40)
