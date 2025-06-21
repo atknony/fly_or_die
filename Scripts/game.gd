@@ -2,6 +2,8 @@ extends Node2D
 const SPIKE = preload("res://Scenes/spike.tscn")
 
 
+var COUNTER: int = 0
+
 @onready var player: CharacterBody2D = $Player
 @onready var leftupper: Marker2D = $Spawner/leftupper
 @onready var leftlower: Marker2D = $Spawner/leftlower
@@ -30,13 +32,21 @@ func spawn_spike() -> void:
 		leftupper.position.y,
 		leftlower.position.y,
 	)
-	new_spike.position = Vector2(
-		37,
-		y_position
-	)
+	if int(COUNTER) % 2 == 0:
+		new_spike.position = Vector2(
+			506,
+			y_position
+		)
+	else: 
+		new_spike.position = Vector2(
+			37,
+			y_position
+		)
+	new_spike.SPEED += COUNTER * 15
 	
 	spike_holder.add_child(new_spike)
 
 
 func _on_spawntimer_timeout() -> void:
+	COUNTER += 1
 	spawn_spike()

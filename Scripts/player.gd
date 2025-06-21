@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var gravity: float = ProjectSettings.get("physics/2d/default_gravity")
-const speed = 50
+const speed = 100
 const JUMP_FORCE = -350
 const HOLD_FORCE = -700
 const HOLD_LIMIT  := 0.5
