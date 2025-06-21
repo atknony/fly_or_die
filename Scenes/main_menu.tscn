@@ -1,9 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://blu6bkrhra286"]
 
-[ext_resource type="Script" uid="uid://ex5egljmipmu" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="FontFile" uid="uid://cj8gi15iw7xjq" path="res://Assets/Fonts/gemunu-libre-v8-latin-700.ttf" id="1_28flt"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
+[ext_resource type="LabelSettings" uid="uid://bwgg3yti5bqka" path="res://Assets/Resources/90Simple.tres" id="2_1ehe0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1ehe0"]
 font = ExtResource("1_28flt")
@@ -80,7 +79,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "FLY OR DIE"
-label_settings = SubResource("LabelSettings_48xlc")
+label_settings = ExtResource("2_1ehe0")
 
 [node name="HighScore" type="Label" parent="MarginContainer"]
 layout_mode = 2
