@@ -1,9 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://blu6bkrhra286"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://ex5egljmipmu" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="FontFile" uid="uid://cj8gi15iw7xjq" path="res://Assets/Fonts/gemunu-libre-v8-latin-700.ttf" id="1_28flt"]
-[ext_resource type="LabelSettings" uid="uid://bwgg3yti5bqka" path="res://Assets/Resources/90Simple.tres" id="2_ce3w2"]
-[ext_resource type="LabelSettings" uid="uid://cwm2d0ual6gbp" path="res://Assets/Resources/60Simple.tres" id="3_n45e2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ehe0"]
+font = ExtResource("1_28flt")
+font_size = 45
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_1ehe0"]
 resource_name = "Blink"
@@ -12,7 +18,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/play_button:modulate")
+tracks/0/path = NodePath("MarginContainer/Button:modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +33,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/play_button:modulate")
+tracks/0/path = NodePath("MarginContainer/Button:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -69,21 +75,21 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="fly_or_die" type="Label" parent="MarginContainer"]
+[node name="Title" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "FLY OR DIE"
-label_settings = ExtResource("2_ce3w2")
+label_settings = SubResource("LabelSettings_48xlc")
 
 [node name="HighScore" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-text = "HIGHSCORE"
-label_settings = ExtResource("3_n45e2")
+text = "0000"
+label_settings = SubResource("LabelSettings_1ehe0")
 
-[node name="play_button" type="Button" parent="MarginContainer"]
+[node name="Button" type="Button" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -91,17 +97,10 @@ theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 60
 text = "PLAY"
 
-[node name="0000" type="Label" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-text = "0000"
-label_settings = ExtResource("3_n45e2")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_n45e2")
 }
 autoplay = "Blink"
 
-[connection signal="pressed" from="MarginContainer/play_button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
