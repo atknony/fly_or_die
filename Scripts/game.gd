@@ -1,10 +1,10 @@
 extends Node2D
 
 const SPIKE = preload("res://Scenes/spike.tscn")
-const SPIKE_HEIGHT = 50
+var SPIKE_HEIGHT = 50.0
 
 var new_wait_time
-var spike_speed = 80
+var spike_speed = 80.0
 var counter = 0
 
 @onready var min_time = 1.0
@@ -27,14 +27,18 @@ func spawn_spike() -> void:
 		new_spike.position = Vector2(16,-50)
 	spike_holder.add_child(new_spike)
 	counter += 1
-	spike_speed += 10
+	if spike_speed < 300:
+		spike_speed *= 1.04
+	else:
+		spike_speed += 5
 	for spike in spike_holder.get_children():
 		spike.SPEED = spike_speed 
 
 func _on_spawntimer_timeout() -> void:
-	min_time = (SPIKE_HEIGHT + 100)/spike_speed 
-	max_time = ((SPIKE_HEIGHT + 100)/spike_speed) + 1
+	min_time = ((SPIKE_HEIGHT)/spike_speed) * 3
+	max_time = min_time * 3
 	new_wait_time = randf_range(min_time,max_time)
 	spawn_spike()
-	spawner_timer.wait_time = new_wait_time
-	
+	spawner_timer.wait_time = new_wait_time	
+	print("Spike Speed: ",spike_speed)
+	print("Counter: ",counter)
